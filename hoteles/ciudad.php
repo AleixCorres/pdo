@@ -17,21 +17,17 @@
     <?php include_once('./php_partials/menu.php') ?>
 
     <div class="container">
-        <table>
-            <tr>
-                <th>Identificador</th>
-                <th>Nombre</th>
-            </tr>
-
-            <?php foreach ($ciudades as $ciudad) { ?>
-                <tr>
-                    <td><?php echo $ciudad['id_ciudad']; ?></td>
-                    <td><?php echo $ciudad['nombre']; ?></td>
-                </tr>
-                
-
-            <?php }  ?>
-        </table>
+        <form action="./php_controllers/ciudadController.php" method="POST">
+            <div class="mb-3">
+                <label for="id_ciudad" class="form-label">Identificador</label>
+                <input type="text" class="form-control" id="id_ciudad" name="id_ciudad" placeholder="Identificador de la ciudad">
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la ciudad">
+            </div>
+            <button type="button" class="btn btn-primary" name="Insert">Aceptar</button>
+        </form>
     </div>
 </body>
 </html>
